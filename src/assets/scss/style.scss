@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -131,7 +132,7 @@ section {
 
   .meta-wrapper {
     margin-top: 1rem;
-    
+
     h5 {
       font-size: 1.125rem;
       margin-bottom: 2px;
@@ -200,4 +201,9 @@ section {
       }
     }
   }
+}
+
+.testimonial-hero, .testimonial-hero img {
+  width: 365px;
+  height: 500px;
 }
