@@ -38,7 +38,7 @@ test("Should able to change value", () => {
   expect(input.value).toBe("23");
 });
 
-test("Should able to change when reach max value", () => {
+test("Should not able to change when reach max value", () => {
   const { input } = setup();
 
   fireEvent.change(input, { target: { value: 33 } });
