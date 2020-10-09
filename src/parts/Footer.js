@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="row">
-          <div className="col text-center copyrights mt-4">
+          <div className="col text-center copyrights my-4">
             Copyright 2019 . All rights reserved . Staycation
           </div>
         </div>

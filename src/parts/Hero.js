@@ -5,9 +5,6 @@ import Button from "elemets/Button";
 
 import ImageHero from "assets/images/img-hero.jpg";
 import ImageHero_ from "assets/images/img-hero-frame.jpg";
-import IconCities from "assets/images/icons/ic_cities.svg";
-import IconBags from "assets/images/icons/ic_bags.svg";
-import IconDestiny from "assets/images/icons/ic_destiny.svg";
 
 import numberFormat from "utils/formatNumber";
 
@@ -47,7 +44,7 @@ export default function Hero(props) {
             <div className="row" style={{ marginTop: 80 }}>
               <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
-                  src={IconBags}
+                  src="/images/icons/ic_cities.svg"
                   alt={`${props.data.travelers} Travelers`}
                   width="36"
                   height="36"
@@ -61,7 +58,7 @@ export default function Hero(props) {
               </div>
               <div className="col-auto" style={{ marginRight: 35 }}>
                 <img
-                  src={IconDestiny}
+                  src="/images/icons/ic_bags.svg"
                   alt={`${props.data.treasures} Treasures`}
                   width="36"
                   height="36"
@@ -75,7 +72,7 @@ export default function Hero(props) {
               </div>
               <div className="col-auto">
                 <img
-                  src={IconCities}
+                  src="/images/icons/ic_destiny.svg"
                   alt={`${props.data.cities} cities`}
                   width="36"
                   height="36"

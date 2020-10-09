@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import propTypes from "prop-types";
 
-import { DateRangePicker } from "react-date-range";
+import { DateRange } from "react-date-range";
 
 import "./index.scss";
 import 'react-date-range/dist/styles.css'; // main style file
@@ -68,7 +68,7 @@ export default function Date(props) {
         />
         {isShowed && (
           <div className="date-range-wrapper">
-            <DateRangePicker
+            <DateRange
               editableDateInputs={true}
               onChange={datePickerChange}
               moveRangeOnFirstSelection={false}
