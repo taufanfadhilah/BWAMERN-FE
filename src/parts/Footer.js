@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "elemets/Button";
+import Button from "elements/Button";
 import IconText from "parts/IconText";
 
 export default function Footer() {

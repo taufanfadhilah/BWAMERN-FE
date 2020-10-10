@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
-import Button from "elemets/Button";
-import { InputNumber, InputDate } from "elemets/Form";
+import Button from "elements/Button";
+import { InputNumber, InputDate } from "elements/Form";
 
 export default class BookingForm extends Component {
   constructor(props) {
