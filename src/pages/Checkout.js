@@ -16,7 +16,7 @@ import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 
 import ItemDetails from "json/itemDetails.json";
-
+import { submitBooking } from "../store/actions/checkout";
 class Checkout extends Component {
   state = {
     data: {
@@ -43,6 +43,28 @@ class Checkout extends Component {
     window.scrollTo(0, 0);
     document.title = "Staycation | Checkout";
   }
+
+  _Submit = (nextStep) => {
+    const { data } = this.state;
+    const { checkout } = this.props;
+    const payload = new FormData();
+    payload.append("firstName", data.firstName);
+    payload.append("lastName", data.lastName);
+    payload.append("email", data.email);
+    payload.append("phoneNumber", data.phone);
+    payload.append("itemId", checkout._id);
+    payload.append("duration", checkout.duration);
+    payload.append("bookingStartDate", checkout.date.startDate);
+    payload.append("bookingEndDate", checkout.date.endDate);
+    payload.append("accountHolder", data.bankHolder);
+    payload.append("bankFrom", data.bankName);
+    payload.append("image", data.proofPayment[0]);
+    // payload.append("bankId", data.bankId);
+
+    this.props.submitBooking(payload).then(() => {
+      nextStep();
+    });
+  };
 
   render() {
     const { data } = this.state;
@@ -158,7 +180,7 @@ class Checkout extends Component {
                           isBlock
                           isPrimary
                           hasShadow
-                          onClick={nextStep}
+                          onClick={() => this._Submit(nextStep)}
                         >
                           Continue to Book
                         </Button>
@@ -196,4 +218,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, { submitBooking })(Checkout);
